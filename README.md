@@ -1,51 +1,73 @@
-# Invofest Landing Page UI 
+# React + TypeScript + Vite
 
-Project ini merupakan implementasi antarmuka pengguna (UI) untuk halaman *landing page* **Informatics Vocational Festival (Invofest)**. Dibangun menggunakan React dan Vite, project ini berfokus pada pembuatan komponen UI yang *reusable*, responsif, dan mengimplementasikan *Best Practices* dalam Design System.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Proyek ini disusun untuk memenuhi Tugas Mata Kuliah **Pemrograman Web 2**, Universitas Harkat Negeri.
+Currently, two official plugins are available:
 
-##  Identitas Saya
-* **Nama:** Dwi Riski Ariyanto
-* **NIM:** 24090028
-* **Program Studi:** [Isi dengan prodi kamu, misal: D4 Teknik Informatika]
-* **Semester / TA:** 4 / 2026-2027
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-## Live Demo
-Project ini sudah di-deploy dan dapat diakses secara langsung melalui tautan berikut:
-ui-invofest.vercel.app
+## React Compiler
 
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Teknologi yang Digunakan
-* [React](https://react.dev) - Library utama untuk membangun UI
-* [Vite](https://vitejs.dev) - Build tool yang sangat cepat
-* [Tailwind CSS](https://tailwindcss.com/) - Framework utility-first untuk styling layout dan komponen
-* [TypeScript](https://www.typescriptlang.org) - Untuk keamanan tipe data (Type Safety)
+## Expanding the ESLint configuration
 
-##  Panduan Setup Lokal
+If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
-Jika ingin menjalankan project ini di komputer lokal, ikuti langkah-langkah berikut:
+```js
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
 
-### 1. Prerequisites
-Pastikan komputermu sudah terinstall Node.js (versi 16 atau lebih baru) dan npm.
+      // Remove tseslint.configs.recommended and replace with this
+      tseslint.configs.recommendedTypeChecked,
+      // Alternatively, use this for stricter rules
+      tseslint.configs.strictTypeChecked,
+      // Optionally, add this for stylistic rules
+      tseslint.configs.stylisticTypeChecked,
 
-### 2. Instalasi
-Clone repository ini dan masuk ke dalam foldernya:
-```bash
-git clone [https://github.com/username-github-kamu/invofest-ui.git](https://github.com/username-github-kamu/invofest-ui.git)
-cd invofest-ui
-Install semua dependencies yang dibutuhkan:
+      // Other configs...
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
+```
 
-Bash
-npm install
-3. Menjalankan Development Server
-Mulai server lokal untuk melihat hasil kodingan:
+You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-Bash
-npm run dev
-Buka browser dan akses http://localhost:5173
+```js
+// eslint.config.js
+import reactX from 'eslint-plugin-react-x'
+import reactDom from 'eslint-plugin-react-dom'
 
-4. Build untuk Production
-Untuk mem-build project agar siap di-deploy:
-
-Bash
-npm run build
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
+      // Enable lint rules for React
+      reactX.configs['recommended-typescript'],
+      // Enable lint rules for React DOM
+      reactDom.configs.recommended,
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
+```
