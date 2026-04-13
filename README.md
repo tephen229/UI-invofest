@@ -1,54 +1,51 @@
-# React UI Component - Pemrograman Web 2
+# Invofest Landing Page UI 
 
-Proyek latihan untuk mata kuliah **Pemrograman Web 2** (Pertemuan ke-2), Universitas Harkat Negri, Semester 4, Tahun Ajaran 2026/2027.
+Project ini merupakan implementasi antarmuka pengguna (UI) untuk halaman *landing page* **Informatics Vocational Festival (Invofest)**. Dibangun menggunakan React dan Vite, project ini berfokus pada pembuatan komponen UI yang *reusable*, responsif, dan mengimplementasikan *Best Practices* dalam Design System.
 
-## Deskripsi
+Proyek ini disusun untuk memenuhi Tugas Mata Kuliah **Pemrograman Web 2**, Universitas Harkat Negeri.
 
-Template ini menyediakan setup minimal untuk membangun **UI Component dengan React dan TypeScript** menggunakan Vite dengan HMR dan ESLint rules. Proyek ini fokus pada pengenalan singkat tentang **Design System** dan best practices dalam pengembangan komponen reusable.
+##  Identitas Saya
+* **Nama:** Dwi Riski Ariyanto
+* **NIM:** 24090028
+* **Program Studi:** [Isi dengan prodi kamu, misal: D4 Teknik Informatika]
+* **Semester / TA:** 4 / 2026-2027
+
+## Live Demo
+Project ini sudah di-deploy dan dapat diakses secara langsung melalui tautan berikut:
+ui-invofest.vercel.app
+
 
 ## Teknologi yang Digunakan
+* [React](https://react.dev) - Library utama untuk membangun UI
+* [Vite](https://vitejs.dev) - Build tool yang sangat cepat
+* [Tailwind CSS](https://tailwindcss.com/) - Framework utility-first untuk styling layout dan komponen
+* [TypeScript](https://www.typescriptlang.org) - Untuk keamanan tipe data (Type Safety)
 
-- [React](https://react.dev)
-- [TypeScript](https://www.typescriptlang.org)
-- [Vite](https://vitejs.dev)
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react) dengan [Oxc](https://oxc.rs)
+##  Panduan Setup Lokal
 
-## Setup Lokal
+Jika ingin menjalankan project ini di komputer lokal, ikuti langkah-langkah berikut:
 
-### Prerequisites
+### 1. Prerequisites
+Pastikan komputermu sudah terinstall Node.js (versi 16 atau lebih baru) dan npm.
 
-- Node.js (versi 16 atau lebih tinggi)
-- npm atau yarn
-
-### Instalasi dan Menjalankan Proyek
-
-1. Clone repository ini:
-
+### 2. Instalasi
+Clone repository ini dan masuk ke dalam foldernya:
 ```bash
-git clone <repository-url>
-cd react-ui-component
-```
+git clone [https://github.com/username-github-kamu/invofest-ui.git](https://github.com/username-github-kamu/invofest-ui.git)
+cd invofest-ui
+Install semua dependencies yang dibutuhkan:
 
-2. Install dependencies:
-
-```bash
+Bash
 npm install
-```
+3. Menjalankan Development Server
+Mulai server lokal untuk melihat hasil kodingan:
 
-3. Jalankan development server:
-
-```bash
+Bash
 npm run dev
-```
+Buka browser dan akses http://localhost:5173
 
-4. Buka browser dan akses `http://localhost:5173`
+4. Build untuk Production
+Untuk mem-build project agar siap di-deploy:
 
-### Build untuk Production
-
-```bash
+Bash
 npm run build
-```
-
-## Expanding the ESLint configuration
-
-Untuk production application, update ESLint configuration dengan type-aware lint rules sesuai dokumentasi resmi.
